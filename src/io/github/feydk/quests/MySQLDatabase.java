@@ -53,7 +53,11 @@ public class MySQLDatabase
 
 					this.connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + dbname, user, password);
 				}
-				catch(ClassNotFoundException | SQLException e)
+				catch(ClassNotFoundException e)
+				{
+					e.printStackTrace();
+				}
+				catch(SQLException e)
 				{
 					e.printStackTrace();
 				}
