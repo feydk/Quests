@@ -18,8 +18,8 @@ import org.json.simple.parser.ParseException;
 public class Quests
 {
 	private static Quests instance;
-	final Map<UUID, BukkitPlayer> players = new HashMap<>();
-	final Map<QuestType, Quest> questMap = new EnumMap<>(QuestType.class);
+	final Map<UUID, BukkitPlayer> players = new HashMap<UUID, BukkitPlayer>();
+	final Map<QuestType, Quest> questMap = new EnumMap<QuestType, Quest>(QuestType.class);
 	private QuestsRewards rewards;
 	
 	public Quests()
@@ -104,7 +104,7 @@ public class Quests
     	final CommandSender console = getPlugin().getServer().getConsoleSender();
     	
     	String json = "[{\"text\": \"" + QuestUI.format("&f" + player.getPlayer().getName() + " completed a") + " \"},";
-    	json += "{ \"text\": \"" + QuestUI.format("&a" + quest.getTypeName() + " quest") + "\", \"hoverEvent\": {\"action\": \"show_text\", \"value\": \"§a" + QuestUI.stripNotes(quest.getDescription()) + "\"}}]";
+    	json += "{ \"text\": \"" + QuestUI.format("&a" + quest.getTypeName() + " quest") + "\", \"hoverEvent\": {\"action\": \"show_text\", \"value\": \"ï¿½a" + QuestUI.stripNotes(quest.getDescription()) + "\"}}]";
     	
     	for(Player p : getPlugin().getServer().getOnlinePlayers())
     	{
