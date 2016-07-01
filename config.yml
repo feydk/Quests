@@ -4,8 +4,930 @@ mysql:
   user: root
   password: password
   database: quests
+rewards:
+  max: 200
+  min: 20
+  decrease: 10
+  triggers:
+    - 1:
+        command: rph %player%
+        text: a random player head
 quests:
   breed:
-    EntityTypes: [ CHICKEN, COW, HORSE, MUSHROOM_COW, OCELOT, PIG, RABBIT, SHEEP, WOLF ]
-    MinAmount: 1
-    MaxAmount: 10
+    entities:
+      - CHICKEN:
+          singular: chicken
+          plural: chickens
+          min: 1
+          max: 5
+      - COW:
+          singular: cow
+          plural: cows
+          min: 1
+          max: 5
+      - HORSE:
+          singular: horse
+          plural: horses
+          min: 1
+          max: 2
+      - MUSHROOM_COW:
+          singular: mooshroom
+          plural: mooshrooms
+          min: 1
+          max: 2
+      - OCELOT:
+          singular: ocelot
+          plural: ocelots
+          min: 1
+          max: 2
+      - PIG:
+          singular: pig
+          plural: pigs
+          min: 1
+          max: 5
+      - RABBIT:
+          singular: rabbit
+          plural: rabbits
+          min: 1
+          max: 2
+      - SHEEP:
+          singular: sheep
+          plural: sheep
+          min: 1
+          max: 3
+      - WOLF:
+          singular: wolf
+          plural: wolves
+          min: 1
+          max: 2
+  mine:
+    blocks:
+      - STONE:
+          name: stone
+          min: 1
+          max: 64
+      - STONE:
+          id: 1
+          name: granite
+          min: 1
+          max: 32
+      - STONE:
+          id: 3
+          name: diorite
+          min: 1
+          max: 32
+      - STONE:
+          id: 5
+          name: andesite
+          min: 1
+          max: 32
+      - GOLD_ORE:
+          name: gold ore
+          min: 1
+          max: 10
+      - IRON_ORE:
+          name: iron ore
+          min: 1
+          max: 20
+      - COAL_ORE:
+          name: coal ore
+          min: 1
+          max: 32
+      - LAPIS_ORE:
+          name: lapis lazuli ore
+          min: 1
+          max: 5
+      - DIAMOND_ORE:
+          name: diamond ore
+          min: 1
+          max: 3
+      - REDSTONE_ORE:
+          name: redstone ore
+          min: 1
+          max: 10
+      - EMERALD_ORE:
+          name: emerald ore
+          min: 1
+          max: 1
+      - QUARTZ_ORE:
+          name: nether quartz ore
+          min: 1
+          max: 20
+      - SANDSTONE:
+          name: sandstone
+          min: 1
+          max: 32
+      - OBSIDIAN:
+          name: obsidian
+          min: 1
+          max: 16
+  grow:
+    types:
+      - ACACIA:
+          singular: acacia tree
+          plural: acacia trees
+          min: 1
+          max: 5
+      - TREE:
+          singular: regular oak tree
+          plural: regular oak trees
+          min: 1
+          max: 5
+      - BIG_TREE:
+          singular: large oak tree
+          plural: large oak trees
+          min: 1
+          max: 2
+      - BIRCH:
+          singular: regular birch tree
+          plural: regular birch trees
+          min: 1
+          max: 5
+      - TALL_BIRCH:
+          singular: tall birch tree
+          plural: tall birch trees
+          min: 1
+          max: 2
+      - DARK_OAK:
+          singular: dark oak tree
+          plural: dark oak trees
+          min: 1
+          max: 3
+      - SMALL_JUNGLE:
+          singular: small jungle tree
+          plural: small jungle trees
+          min: 1
+          max: 3
+      - COCOA_TREE:
+          singular: regular jungle tree
+          plural: regular jungle trees
+          min: 1
+          max: 3
+      - JUNGLE:
+          singular: 2x2 jungle tree
+          plural: 2x2 jungle trees
+          min: 1
+          max: 2
+      - REDWOOD:
+          singular: regular spruce tree
+          plural: regular spruce trees
+          min: 1
+          max: 5
+      - TALL_REDWOOD:
+          singular: tall spruce tree
+          plural: tall spruce trees
+          min: 1
+          max: 3
+      - MEGA_REDWOOD:
+          singular: 2x2 spruce tree
+          plural: 2x2 spruce trees
+          min: 1
+          max: 2
+      - CHORUS_PLANT:
+          singular: chorus plant
+          plural: chorus plants
+          min: 1
+          max: 3
+      - BROWN_MUSHROOM:
+          singular: big brown mushroom
+          plural: big brown mushrooms
+          min: 1
+          max: 1
+      - RED_MUSHROOM:
+          singular: big red mushroom
+          plural: big red mushrooms
+          min: 1
+          max: 1
+  damage:
+    min: 1
+    max: 10
+    from:
+      - UNKNOWN:
+          name: any
+      - CAVE_SPIDER:
+          name: a cave spider
+      - ENDERMAN:
+          name: an enderman
+      - ENDERMITE:
+          name: an endermite
+      - GHAST:
+          name: a ghast
+      - GUARDIAN:
+          name: a guardian
+      - IRON_GOLEM:
+          name: an iron golem
+      - MAGMA_CUBE:
+          name: a magma cube
+      - PIG_ZOMBIE:
+          name: a zombie pigman
+      - POLAR_BEAR:
+          name: a polar bear
+      - PRIMED_TNT:
+          name: TNT
+      - SKELETON:
+          name: a skeleton
+      - SLIME:
+          name: a slime
+      - SPIDER:
+          name: a regular spider
+      - ZOMBIE:
+          name: a zombie
+  eat:
+    foods:
+      - APPLE:
+          singular: apple
+          plural: apples
+          min: 1
+          max: 5
+      - MUSHROOM_SOUP:
+          singular: mushroom stew
+          plural: mushroom stew
+          min: 1
+          max: 2
+      - BREAD:
+          singular: bread
+          plural: bread
+          min: 1
+          max: 5
+      - PORK:
+          singular: raw porkchop
+          plural: raw porkchops
+          min: 1
+          max: 3
+      - GRILLED_PORK:
+          singular: cooked porkchop
+          plural: cooked porkchops
+          min: 1
+          max: 3
+      - GOLDEN_APPLE:
+          singular: golden apple
+          plural: golden apples
+          min: 1
+          max: 1
+      - RAW_FISH:
+          id: 0
+          singular: raw regular fish
+          plural: raw regular fish
+          min: 1
+          max: 3
+      - RAW_FISH:
+          id: 1
+          singular: raw salmon
+          plural: raw salmon
+          min: 1
+          max: 3
+      - RAW_FISH:
+          id: 2
+          singular: raw clownfish
+          plural: raw clownfish
+          min: 1
+          max: 1
+      - RAW_FISH:
+          id: 3
+          singular: raw pufferfish
+          plural: raw pufferfish
+          min: 1
+          max: 1
+      - COOKED_FISH:
+          id: 0
+          singular: cooked regular fish
+          plural: cooked regular fish
+          min: 1
+          max: 5
+      - COOKED_FISH:
+          id: 1
+          singular: cooked salmon
+          plural: cooked salmon
+          min: 1
+          max: 5
+      - CAKE_BLOCK:
+          singular: piece of cake
+          plural: pieces of cake
+          min: 1
+          max: 3
+      - COOKIE:
+          singular: cookie
+          plural: cookies
+          min: 1
+          max: 10
+      - MELON:
+          singular: piece of melon
+          plural: pieces of melon
+          min: 1
+          max: 10
+      - RAW_BEEF:
+          singular: raw beef
+          plural: raw beef
+          min: 1
+          max: 3
+      - COOKED_BEEF:
+          singular: steak
+          plural: steaks
+          min: 1
+          max: 3
+      - RAW_CHICKEN:
+          singular: raw chicken
+          plural: raw chicken
+          min: 1
+          max: 3
+      - COOKED_CHICKEN:
+          singular: cooked chicken
+          plural: cooked chicken
+          min: 1
+          max: 3
+      - ROTTEN_FLESH:
+          singular: rotten flesh
+          plural: rotten flesh
+          min: 1
+          max: 3
+      - SPIDER_EYE:
+          singular: spider eye
+          plural: spider eyes
+          min: 1
+          max: 3
+      - CARROT_ITEM:
+          singular: carrot
+          plural: carrots
+          min: 1
+          max: 5
+      - POTATO_ITEM:
+          singular: potato
+          plural: potatoes
+          min: 1
+          max: 3
+      - BAKED_POTATO:
+          singular: baked potato
+          plural: baked potatoes
+          min: 1
+          max: 5
+      - POISONOUS_POTATO:
+          singular: poisonous potato
+          plural: poisonous potatoes
+          min: 1
+          max: 1
+      - PUMPKIN_PIE:
+          singular: piece of pumpkin pie
+          plural: pieces of pumpkin pie
+          min: 1
+          max: 3
+      - RABBIT:
+          singular: raw rabbit
+          plural: raw rabbit
+          min: 1
+          max: 3
+      - COOKED_RABBIT:
+          singular: cooked rabbit
+          plural: cooked rabbit
+          min: 1
+          max: 3
+      - RABBIT_STEW:
+          singular: rabbit stew
+          plural: rabbit stew
+          min: 1
+          max: 1
+      - MUTTON:
+          singular: raw mutton
+          plural: raw mutton
+          min: 1
+          max: 3
+      - COOKED_MUTTON:
+          singular: cooked mutton
+          plural: cooked mutton
+          min: 1
+          max: 3
+      - BEETROOT:
+          singular: beetroot
+          plural: beetroots
+          min: 1
+          max: 5
+      - BEETROOT_SOUP:
+          singular: beetroot soup
+          plural: beetroot soup
+          min: 1
+          max: 1
+      - CHORUS_FRUIT:
+          singular: chorus fruit
+          plural: chorus fruit
+          min: 1
+          max: 5
+  throw:
+    items:
+      - ENDER_PEARL:
+          singular: ender pearl
+          plural: ender pearls
+          min: 1
+          max: 10
+      - SNOW_BALL:
+          singular: snowball
+          plural: snowballs
+          min: 1
+          max: 10
+      - EGG:
+          hatch: true
+          singular: egg
+          plural: eggs
+          min: 1
+          max: 10
+      - EGG:
+          hatch: false
+          singular: egg
+          plural: eggs
+          min: 1
+          max: 10
+      - SPLASH_POTION:
+          potion: NIGHT_VISION
+          singular: night vision
+          plural: night vision
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: INVISIBILITY
+          singular: invisibility
+          plural: invisibility
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: JUMP
+          singular: leaping
+          plural: leaping
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: FIRE_RESISTANCE
+          singular: fire resistance
+          plural: fire resistance
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: SPEED
+          singular: swiftness
+          plural: swiftness
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: SLOWNESS
+          singular: slowness
+          plural: slowness
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: WATER_BREATHING
+          singular: water breathing
+          plural: water breathing
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: INSTANT_HEAL
+          singular: healing
+          plural: healing
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: INSTANT_DAMAGE
+          singular: harming
+          plural: harming
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: POISON
+          singular: poison
+          plural: poison
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: REGEN
+          singular: regeneration
+          plural: regeneration
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: STRENGTH
+          singular: strength
+          plural: strength
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: WEAKNESS
+          singular: weakness
+          plural: weakness
+          min: 1
+          max: 1
+      - SPLASH_POTION:
+          potion: LUCK
+          singular: luck
+          plural: luck
+          min: 1
+          max: 1
+  tame:
+    entities:
+      - HORSE:
+          singular: horse
+          plural: horses
+          min: 1
+          max: 1
+      - OCELOT:
+          singular: ocelot
+          plural: ocelots
+          min: 1
+          max: 1
+      - WOLF:
+          singular: wolf
+          plural: wolves
+          min: 1
+          max: 1
+  craft:
+    items:
+      - BUCKET:
+          singular: bucket
+          plural: buckets
+          min: 1
+          max: 3
+      - BOOK:
+          singular: book
+          plural: books
+          min: 1
+          max: 10
+      - BOOK_AND_QUILL:
+          singular: book and quill
+          plural: book and quill
+          min: 1
+          max: 5
+      - EMPTY_MAP:
+          singular: empty map
+          plural: empty maps
+          min: 1
+          max: 3
+      - POWERED_RAIL:
+          singular: powered rail
+          plural: powered rail
+          min: 1
+          max: 2
+      - ACTIVATOR_RAIL:
+          singular: activator rail
+          plural: activator rail
+          min: 1
+          max: 2
+      - MINECART:
+          singular: minecart
+          plural: minecarts
+          min: 1
+          max: 3
+      - CARROT_STICK:
+          singular: carrot on a stick
+          plural: carrot on a stick
+          min: 1
+          max: 3
+      - NOTE_BLOCK:
+          singular: note block
+          plural: note blocks
+          min: 1
+          max: 5
+      - TNT:
+          singular: TNT
+          plural: TNT
+          min: 1
+          max: 10
+      - REDSTONE_LAMP_OFF:
+          singular: redstone lamp
+          plural: redstone lamps
+          min: 1
+          max: 3
+      - DAYLIGHT_DETECTOR:
+          singular: daylight sensor
+          plural: daylight sensors
+          min: 1
+          max: 1
+      - DIODE:
+          singular: redstone repeater
+          plural: redstone repeaters
+          min: 1
+          max: 1
+      - REDSTONE_COMPARATOR:
+          singular: redstone comparator
+          plural: redstone comparators
+          min: 1
+          max: 1
+      - JUKEBOX:
+          singular: jukebox
+          plural: jukeboxes
+          min: 1
+          max: 1
+      - ANVIL:
+          singular: anvil
+          plural: anvils
+          min: 1
+          max: 1
+      - PAINTING:
+          singular: painting
+          plural: paintings
+          min: 1
+          max: 3
+      - ITEM_FRAME:
+          singular: item frame
+          plural: item frames
+          min: 1
+          max: 3
+      - FLOWER_POT_ITEM:
+          singular: flower pot
+          plural: flower pots
+          min: 1
+          max: 3
+      - ARMOR_STAND:
+          singular: armor stand
+          plural: armor stands
+          min: 1
+          max: 1
+      - BANNER:
+          singular: banner
+          plural: banners
+          min: 1
+          max: 1
+      - BONE_BLOCK:
+          singular: bone block
+          plural: bone blocks
+          min: 1
+          max: 10
+      - CAKE:
+          singular: cake
+          plural: cakes
+          min: 1
+          max: 3
+      - COMPASS:
+          singular: compass
+          plural: compasses
+          min: 1
+          max: 1
+      - WATCH:
+          singular: clock
+          plural: clocks
+          min: 1
+          max: 1
+      - SHIELD:
+          singular: shield
+          plural: shields
+          min: 1
+          max: 1
+      - CAULDRON_ITEM:
+          singular: cauldron
+          plural: cauldrons
+          min: 1
+          max: 1
+  smelt:
+    items:
+      - GRILLED_PORK:
+          subcat: cooking
+          singular: porkchop
+          plural: porkchops
+          min: 1
+          max: 10
+      - COOKED_FISH:
+          subcat: cooking
+          id: 0
+          singular: regular fish
+          plural: regular fish
+          min: 1
+          max: 10
+      - COOKED_FISH:
+          subcat: cooking
+          id: 1
+          singular: salmon
+          plural: salmon
+          min: 1
+          max: 10
+      - COOKED_BEEF:
+          subcat: cooking
+          singular: steak
+          plural: steaks
+          min: 1
+          max: 10
+      - COOKED_CHICKEN:
+          subcat: cooking
+          singular: chicken
+          plural: chicken
+          min: 1
+          max: 10
+      - BAKED_POTATO:
+          subcat: cooking
+          singular: potato
+          plural: potatoes
+          min: 1
+          max: 10
+      - COOKED_RABBIT:
+          subcat: cooking
+          singular: rabbit
+          plural: rabbit
+          min: 1
+          max: 10
+      - COOKED_MUTTON:
+          subcat: cooking
+          singular: mutton
+          plural: mutton
+          min: 1
+          max: 10
+      - STONE:
+          subcat: smelting
+          singular: cobblestone
+          plural: cobblestone
+          min: 1
+          max: 128
+  enchant:
+    items:
+      - WOOD_AXE:
+          name: a wooden axe
+      - WOOD_SPADE:
+          name: a wooden shovel
+      - WOOD_PICKAXE:
+          name: a wooden pickaxe
+      - WOOD_SWORD:
+          name: a wooden sword
+      - STONE_AXE:
+          name: a stone axe
+      - STONE_SPADE:
+          name: a stone shovel
+      - STONE_PICKAXE:
+          name: a stone pickaxe
+      - STONE_SWORD:
+          name: a stone sword
+      - IRON_AXE:
+          name: an iron axe
+      - IRON_SPADE:
+          name: an iron shovel
+      - IRON_PICKAXE:
+          name: an iron pickaxe
+      - IRON_SWORD:
+          name: an iron sword
+      - GOLD_AXE:
+          name: a golden axe
+      - GOLD_SPADE:
+          name: a golden shovel
+      - GOLD_PICKAXE:
+          name: a golden pickaxe
+      - GOLD_SWORD:
+          name: a golden sword
+      - DIAMOND_AXE:
+          name: a diamond axe
+      - DIAMOND_SPADE:
+          name: a diamond shovel
+      - DIAMOND_PICKAXE:
+          name: a diamond pickaxe
+      - DIAMOND_SWORD:
+          name: a diamond sword
+      - BOW:
+          name: a bow
+      - FISHING_ROD:
+          name: a fishing rod
+      - LEATHER_HELMET:
+          name: a leather helmet
+      - LEATHER_CHESTPLATE:
+          name: a leather chestplate
+      - LEATHER_LEGGINGS:
+          name: a pair of leather leggings
+      - LEATHER_BOOTS:
+          name: a pair of leather boots
+      - IRON_HELMET:
+          name: an iron helmet
+      - IRON_CHESTPLATE:
+          name: an iron chestplate
+      - IRON_LEGGINGS:
+          name: a pair of iron leggings
+      - IRON_BOOTS:
+          name: a pair of iron boots
+      - GOLD_HELMET:
+          name: a golden helmet	  
+      - GOLD_CHESTPLATE:
+          name: a golden chestplate
+      - GOLD_LEGGINGS:
+          name: a pair of golden leggings
+      - GOLD_BOOTS:
+          name: a pair of golden boots
+      - DIAMOND_HELMET:
+          name: a diamond helmet
+      - DIAMOND_CHESTPLATE:
+          name: a diamond chestplate
+      - DIAMOND_LEGGINGS:
+          name: a pair of diamond leggings
+      - DIAMOND_BOOTS:
+          name: a pair of diamond boots
+  fish:
+    items:
+      - RAW_FISH:
+          id: 0
+          singular: regular fish
+          plural: regular fish
+          min: 1
+          max: 10
+      - RAW_FISH:
+          id: 1
+          singular: salmon
+          plural: salmon
+          min: 1
+          max: 5
+      - RAW_FISH:
+          id: 3
+          singular: pufferfish
+          plural: pufferfish
+          min: 1
+          max: 2
+      - TREASURE:
+          singular: treasure item
+          plural: treasure items
+          min: 1
+          max: 1
+      - JUNK:
+          singular: junk item
+          plural: junk items
+          min: 1
+          max: 1
+  trade:
+    general:
+      singular: trade
+      plural: trades
+      min: 1
+      max: 5
+  kill:
+    entities:
+      - CHICKEN:
+          singular: chicken
+          plural: chickens
+          min: 1
+          max: 5
+      - COW:
+          singular: cow
+          plural: cows
+          min: 1
+          max: 5
+      - PIG:
+          singular: pig
+          plural: pigs
+          min: 1
+          max: 5
+      - RABBIT:
+          singular: rabbit
+          plural: rabbits
+          min: 1
+          max: 5
+      - SHEEP:
+          singular: sheep
+          plural: sheep
+          min: 1
+          max: 5
+      - SQUID:
+          singular: squid
+          plural: squid
+          min: 1
+          max: 5
+      - CAVE_SPIDER:
+          singular: cave spider
+          plural: cave spiders
+          min: 1
+          max: 1
+      - ENDERMAN:
+          singular: enderman
+          plural: endermen
+          min: 1
+          max: 1
+      - ENDERMITE:
+          singular: endermite
+          plural: endermites
+          min: 1
+          max: 1
+      - GHAST:
+          singular: ghast
+          plural: ghasts
+          min: 1
+          max: 1
+      - GUARDIAN:
+          singular: guardian
+          plural: guardians
+          min: 1
+          max: 1
+      - MAGMA_CUBE:
+          singular: magma cube
+          plural: magma cubes
+          min: 1
+          max: 1
+      - PIG_ZOMBIE:
+          singular: zombie pigman
+          plural: zombie pigmen
+          min: 1
+          max: 1
+      - SKELETON:
+          singular: skeleton
+          plural: skeletons
+          min: 1
+          max: 10
+      - SLIME:
+          singular: slime
+          plural: slimes
+          min: 1
+          max: 1
+      - SPIDER:
+          singular: spider
+          plural: spiders
+          min: 1
+          max: 5
+      - ZOMBIE:
+          singular: zombie
+          plural: zombies
+          min: 1
+          max: 10
