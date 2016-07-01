@@ -161,8 +161,8 @@ public class QuestKill extends Quest implements Listener
 		
 		if(!(event.getEntity().getKiller() instanceof Player))
 			return;
-		
-		if(!event.getEntity().getCustomName().isEmpty())
+
+		if(event.getEntity().getCustomName() != null && !event.getEntity().getCustomName().isEmpty())
 			return;
 		
 		Player p = (Player)event.getEntity().getKiller();
