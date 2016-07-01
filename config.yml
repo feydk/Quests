@@ -1,0 +1,11 @@
+mysql:
+  host: localhost
+  port: 3306
+  user: root
+  password: password
+  database: quests
+quests:
+  breed:
+    EntityTypes: [ CHICKEN, COW, HORSE, MUSHROOM_COW, OCELOT, PIG, RABBIT, SHEEP, WOLF ]
+    MinAmount: 1
+    MaxAmount: 10

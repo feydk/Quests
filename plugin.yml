@@ -1,0 +1,25 @@
+name: Quests
+main: io.github.feydk.quests.QuestsPlugin
+description: Quests, quests, quests everywhere!
+database: true
+depend: [ Vault, Fe, Exploits ]
+version: 2.0
+commands:
+  quest:
+    description: Use the quest commands
+    permission: quests.quest
+    aliases: q
+  questsadmin:
+    description: Use the quest admin commands
+    permission: quests.admin
+    aliases: qa
+permissions:
+  quests.quests:
+    description: Use /quests
+    default: op
+  quests.quest:
+    description: Use /quest
+    default: op
+  quests.admin:
+    description: Use /questadmin
+    default: op
