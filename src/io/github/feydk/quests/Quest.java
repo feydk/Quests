@@ -128,7 +128,7 @@ public abstract class Quest
     	
 		QuestUI.title(player.getPlayer(), "", "&aQuest Completed!");
     	
-    	HistoryModel.create(player.uuid, player.activeQuest.toJson(), QuestStatus.COMPLETED.ordinal(), player.activeQuest.reward, player.activeQuest.getTypeName(), player.timestampBegin, player.timestampCreated);
+    	HistoryModel.create(player.uuid, player.activeQuest.toJson(), QuestStatus.COMPLETED.ordinal(), player.activeQuest.reward, player.activeQuest.getTypeName(), player.timestampBegin);
     	getQuests().announceQuestCompletion(player, player.activeQuest);
     	
     	QuestCompletedEvent.call(player.getPlayer(), player.index);
@@ -146,6 +146,7 @@ public abstract class Quest
     	}
     	
     	player.index = player.getIndex();
+	    //System.out.println("index after: " + player.index);
     	
     	// Regenerate choices to avoid players having the option to do the same quest over and over.
     	List<Quest> list = getQuests().generateQuests(3);

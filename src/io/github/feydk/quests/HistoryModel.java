@@ -126,19 +126,19 @@ public class HistoryModel
 		return list;
 	}
 	
-	public static HistoryModel create(UUID player_uuid, String quest, int status, double reward, String quest_type, long timestamp_begin, long timestamp_created)
+	public static HistoryModel create(UUID player_uuid, String quest, int status, double reward, String quest_type, long timestamp_begin)
 	{
 		String ts = Long.toString(timestamp_begin);
 		
 		if(ts.length() > 10)
 			ts = ts.substring(0, 10);
 		
-		String ts2 = Long.toString(timestamp_created);
+		/*String ts2 = Long.toString(timestamp_created);
 		
 		if(ts2.length() > 10)
-			ts2 = ts2.substring(0, 10);
+			ts2 = ts2.substring(0, 10);  */
 		
-		String query = "insert into history (player_uuid, quest, quest_type, status, reward, timestamp_begin, timestamp_end, timestamp_created) values(?, ?, ?, ?, ?, FROM_UNIXTIME(" + ts + "), now(), FROM_UNIXTIME(" + ts2 + "))";
+		String query = "insert into history (player_uuid, quest, quest_type, status, reward, timestamp_begin, timestamp_end, timestamp_created) values(?, ?, ?, ?, ?, FROM_UNIXTIME(" + ts + "), now(), now())";
 
 		HashMap<Integer, Object> params = new HashMap<Integer, Object>();
 		params.put(1, player_uuid.toString());
