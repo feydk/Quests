@@ -50,4 +50,7 @@ public class QuestCompletedEvent extends Event implements Cancellable
 		 
 		 return (!event.isCancelled());
 	 }
+
+         public Player getPlayer() { return player; }
+         public int getIndex() { return index; }
 }
