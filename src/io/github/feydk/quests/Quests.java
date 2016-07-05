@@ -179,6 +179,7 @@ public class Quests
 		catch(ParseException e)
 		{
 			e.printStackTrace();
+			System.out.println("Quest JSON couldn't load: " + json);
 		}
     	
     	return null;

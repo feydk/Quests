@@ -139,7 +139,7 @@ public class QuestFish extends Quest implements Listener
 			q.goal = Double.parseDouble(map.get("goal").toString());
 			q.progress = Double.parseDouble(map.get("progress").toString());
 			q.data = new FishData();
-			
+
 
 			if(map.get("type").toString().equals("TREASURE"))
 				q.data.Subcat = "treasure";
@@ -148,13 +148,13 @@ public class QuestFish extends Quest implements Listener
 			else
 				q.data.Type = Material.valueOf(map.get("type").toString());
 			
-			if(map.containsKey("id") && q.data.Subcat == null)
+			if(map.containsKey("id") && q.data.Subcat == null && q.data.Type != null)
 			{
 				q.data.Id = Integer.parseInt(map.get("id").toString());
 				
 				for(FishData bd : configData)
 				{
-					if(bd.Type.equals(q.data.Type) && bd.Id == q.data.Id)
+					if(bd.Type != null && bd.Type.equals(q.data.Type) && bd.Id == q.data.Id)
 					{
 						q.data.Singular = bd.Singular;
 						q.data.Plural = bd.Plural;
@@ -168,7 +168,7 @@ public class QuestFish extends Quest implements Listener
 				{
 					if(q.data.Type != null)
 					{
-						if(bd.Type.equals(q.data.Type))
+						if(bd.Type != null && bd.Type.equals(q.data.Type))
 						{
 							q.data.Singular = bd.Singular;
 							q.data.Plural = bd.Plural;
@@ -192,6 +192,7 @@ public class QuestFish extends Quest implements Listener
 		catch(ParseException e)
 		{
 			e.printStackTrace();
+			System.out.println("Quest JSON couldn't load: " + json);
 		}
 		
 		return null;

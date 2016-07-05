@@ -114,10 +114,20 @@ public class BukkitPlayer
     			PlayerModel.updateName(uuid, getPlayer().getName());
     		
     		index = PlayerModel.getIndex(uuid);
+		    //System.out.println("index: " + index);
     		
     		if(!obj.quest_active.isEmpty())
     		{
     			activeQuest = getQuests().fromJson(obj.quest_active);
+
+			    if(activeQuest == null)
+			    {
+				    List<Quest> list = getQuests().generateQuests(3);
+				    saveChoices(list);
+
+				    assignQuest(list.get(0));
+			    }
+
     			activeQuest.reward = getQuests().getRewards().getReward(index);
     		}
     		else
