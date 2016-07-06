@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.json.simple.parser.JSONParser;
@@ -104,12 +105,12 @@ public class Quests
     	final CommandSender console = getPlugin().getServer().getConsoleSender();
     	
     	String json = "[{\"text\": \"" + QuestUI.format("&f" + player.getPlayer().getName() + " completed a") + " \"},";
-    	json += "{ \"text\": \"" + QuestUI.format("&a" + quest.getTypeName() + " quest") + "\", \"hoverEvent\": {\"action\": \"show_text\", \"value\": \"�a" + QuestUI.stripNotes(quest.getDescription()) + "\"}}]";
+    	json += "{ \"text\": \"" + QuestUI.format("&a" + quest.getTypeName() + " quest") + "\", \"hoverEvent\": {\"action\": \"show_text\", \"value\": \"" + ChatColor.GREEN + QuestUI.stripNotes(quest.getDescription()) + "\"}}]";
     	
     	for(Player p : getPlugin().getServer().getOnlinePlayers())
     	{
-    		if(p.getUniqueId().equals(player.uuid))
-    			continue;
+    		//if(p.getUniqueId().equals(player.uuid))
+    		//	continue;
     		
     		if(players.containsKey(p.getUniqueId()))
     		{
