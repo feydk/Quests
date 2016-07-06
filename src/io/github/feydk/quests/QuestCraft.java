@@ -173,7 +173,8 @@ public class QuestCraft extends Quest implements Listener
 		public String Singular;
 		public String Plural;
 	}
-	
+
+	@SuppressWarnings("deprecation")
 	@EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
 	private void onCraftItem(CraftItemEvent event)
 	{
@@ -192,6 +193,9 @@ public class QuestCraft extends Quest implements Listener
 			return;
 		
 		if(!event.getRecipe().getResult().getType().equals(q.data.Type))
+			return;
+
+		if(p.getItemOnCursor().getType() != Material.AIR)
 			return;
 		
 		int amount = 0;
