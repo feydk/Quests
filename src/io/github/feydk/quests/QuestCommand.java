@@ -1,5 +1,6 @@
 package io.github.feydk.quests;
 
+import java.util.Date;
 import java.util.List;
 
 import org.bukkit.command.Command;
@@ -19,6 +20,7 @@ public class QuestCommand implements CommandExecutor
         return QuestsPlugin.getInstance();
     }
 
+	@SuppressWarnings("deprecation")
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
     {
@@ -92,10 +94,23 @@ public class QuestCommand implements CommandExecutor
         {
         	if(player.hasPermission("quests.quest"))
         	{
-        		List<Quest> list = getQuests().generateQuests(3);
-            	p.saveChoices(list);
-            	p.assignQuest(list.get(0));
-            	QuestUI.displayQuestSelected(player);
+		        Date d1 = new Date(p.timestampCreated);
+		        d1.setHours(0);
+		        d1.setMinutes(0);
+		        d1.setSeconds(0);
+
+		        Date d2 = new Date();
+		        d2.setHours(0);
+		        d2.setMinutes(0);
+		        d2.setSeconds(0);
+
+		        if(!(d2.toString().equals(d1.toString())))
+		        {
+			        List<Quest> list = getQuests().generateQuests(3);
+			        p.saveChoices(list);
+			        p.assignQuest(list.get(0));
+			        QuestUI.displayQuestSelected(player);
+		        }
             	
         		//QuestUI.displayQuestSelection(player, list);
         	}
