@@ -195,8 +195,8 @@ public class QuestCraft extends Quest implements Listener
 		if(!event.getRecipe().getResult().getType().equals(q.data.Type))
 			return;
 
-		if(p.getItemOnCursor().getType() != Material.AIR)
-			return;
+		//if(p.getItemOnCursor().getType() != Material.AIR)
+		//	return;
 		
 		int amount = 0;
 		
@@ -214,9 +214,11 @@ public class QuestCraft extends Quest implements Listener
 		}
 		else
 		{
-			amount = event.getRecipe().getResult().getAmount();
+			if(p.getItemOnCursor().getType().equals(Material.AIR) || (p.getItemOnCursor().getType() != Material.AIR && p.getItemOnCursor().getType().equals(q.data.Type)))
+				amount = event.getRecipe().getResult().getAmount();
 		}
-		
-		q.updateProgress(player, amount);
+
+		if(amount > 0)
+			q.updateProgress(player, amount);
 	}
 }
