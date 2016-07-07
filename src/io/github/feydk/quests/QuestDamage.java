@@ -10,10 +10,7 @@ import java.util.Map.Entry;
 import java.util.Random;
 
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Arrow;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -195,6 +192,14 @@ public class QuestDamage extends Quest implements Listener
 				{
 					ProjectileSource shooter = ((Arrow)damager).getShooter();
 					
+					if(shooter instanceof Entity)
+						damager = (Entity)shooter;
+				}
+				else if(damager instanceof Fireball)
+				{
+					 // Ghast fireballs
+					ProjectileSource shooter = ((Fireball)damager).getShooter();
+
 					if(shooter instanceof Entity)
 						damager = (Entity)shooter;
 				}
