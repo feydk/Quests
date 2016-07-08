@@ -19,6 +19,7 @@ public class QuestUI
 	{
 		BukkitPlayer p = Quests.getInstance().getBukkitPlayer(player);
 		p.index = p.getIndex();
+		quest.reward = Quests.getInstance().getRewards().getReward(p.index);
 		RewardEntry reward = Quests.getInstance().getRewards().getTriggerReward(p.index);
 		
 		Date today = new Date();
