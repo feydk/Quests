@@ -213,6 +213,9 @@ public class QuestFish extends Quest implements Listener
 	@EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
 	private void onPlayerFish(PlayerFishEvent event)
 	{
+		if(event.getState() != PlayerFishEvent.State.CAUGHT_FISH)
+			return;
+
 		if(event.getCaught() == null)
 			return;
 
