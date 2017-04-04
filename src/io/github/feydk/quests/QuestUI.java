@@ -115,7 +115,7 @@ public class QuestUI
 		json += "{\"text\": \"\n " + format("&b§m   §r &bQuests Help §m   §r") + "\n\"}, ";
 		json += "{\"color\": \"gray\", \"text\": \" Quests are small tasks that you can do to earn money. Quests are divided into various categories and every quest is randomly generated for you.\n \n\"}, ";
 		json += "{\"color\": \"gray\", \"text\": \" Every day you can complete as many quests as you want, but the reward will decrease as you progress. The rewards are reset at midnight server time.\n \n\"}, ";
-		json += "{\"color\": \"gray\", \"text\": \" When you do quests, make sure to read the quest description. If will say exactly what you need to do to complete the quest. Good luck and have fun!\"} ";
+		json += "{\"color\": \"gray\", \"text\": \" When you do quests, make sure to read the quest description. It will say exactly what you need to do to complete the quest. Good luck and have fun!\"} ";
 		json += "] ";
 		
 		sendJsonMessage(player.getPlayer(), json);
