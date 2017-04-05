@@ -1,7 +1,6 @@
 name: Quests
 main: io.github.feydk.quests.QuestsPlugin
 description: Quests, quests, quests everywhere!
-database: true
 depend: [ Vault, Fe, Exploits ]
 version: 2.0
 commands:
