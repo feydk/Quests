@@ -1,7 +1,8 @@
 name: Quests
 main: io.github.feydk.quests.QuestsPlugin
 description: Quests, quests, quests everywhere!
-depend: [ Vault, Fe, Exploits ]
+depend: [ Vault, Exploits ]
+softdepend: [ Fe ]
 version: 2.0
 commands:
   quest:
