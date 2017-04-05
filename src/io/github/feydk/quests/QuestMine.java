@@ -174,7 +174,7 @@ public class QuestMine extends Quest implements Listener
 	}
 	
 	@SuppressWarnings("deprecation")
-	@EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
+	@EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
 	private void onBlockBreak(BlockBreakEvent event)
 	{
 		if(!event.getPlayer().hasPermission("quests.quests"))
