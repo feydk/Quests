@@ -213,7 +213,7 @@ public class QuestThrow extends Quest implements Listener
 		public String Plural;
 	}
 	
-	@EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
+	@EventHandler(ignoreCancelled = false, priority = EventPriority.MONITOR)
 	private void onPotionThrow(PotionSplashEvent event)
 	{
 		ThrownPotion potion = event.getPotion();
