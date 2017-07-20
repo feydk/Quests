@@ -179,7 +179,10 @@ public class QuestGrow extends Quest implements Listener
 		{
 			public void run()
 			{
-				if(event.getWorld().getBlockAt(event.getLocation()).getType() != Material.SAPLING)
+				Material mat = event.getLocation().getBlock().getType();
+				if(mat != Material.SAPLING &&
+				   mat != Material.BROWN_MUSHROOM &&
+				   mat != Material.RED_MUSHROOM)
 				{
 					TreeType grown = event.getSpecies();
 						
